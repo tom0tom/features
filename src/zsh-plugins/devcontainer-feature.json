@@ -25,6 +25,11 @@
       ],
       "description": "Space separated list of Oh-My-ZSH custom plugin Git URLs that will be cloned"
     },
+    "theme": {
+      "type": "string",
+      "default": "devcontainers",
+      "description": "theme name to put in .zshrc"
+    },
     "username": {
       "type": "string",
       "default": "",
