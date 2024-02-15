@@ -2,6 +2,7 @@
 set -x
 PLUGINS=${PLUGINS:-""}
 OMZSH_PLUGINS=${OMZPLUGINS:-""}
+THEME=${THEME:-""}
 USERNAME=${USERNAME:-$_REMOTE_USER}
 
 
@@ -60,3 +61,8 @@ fi
 
 # Activate zsh plugins from PLUGINS
 sed -i -e "s/plugins=.*/plugins=(git ${PLUGINS})/g" "$ZSH_CONFIG"
+
+# Replace theme if set
+if ! [ "$THEME" = "" ]; then
+  sed  "/^ZSH_THEME/s|\".*\"|\"$THEME\"|" "$ZSH_CONFIG"
+fi
